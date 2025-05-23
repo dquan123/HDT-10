@@ -1,5 +1,3 @@
-# hoja_trabajo10.py
-
 import math
 from typing import List, Dict, Tuple, Optional
 
@@ -124,9 +122,9 @@ class Grafo:
 def main():
     grafo = Grafo()
     try:
-        grafo.cargar_desde_archivo('logistica.txt')
+        grafo.cargar_desde_archivo("C:\\Users\\dquan\\OneDrive\\Documentos\\Diego Quan\\UVG\\Ciclo 3\\Algoritmos y Estructura de datos\\Hoja de trabajo 10\\HDT-10\\logistica.txt")
     except FileNotFoundError:
-        print("Error: no se encontró 'logistica.txt'. Verifica su existencia.")
+        print("Error: no se encontró 'logistica.txt'")
         return
 
     clima_actual = 'normal'
@@ -148,7 +146,7 @@ def main():
                 print("No existe ruta entre esas ciudades.")
             else:
                 i, j = grafo.indice[origen], grafo.indice[destino]
-                print(f"Ruta: {' -> '.join(ruta)} | Costo ({clima_actual}): {dist[i][j]}")
+                print(f"Ruta: {' -> '.join(ruta)} | Peso ({clima_actual}): {dist[i][j]}")
 
         elif opcion == '2':
             centro = grafo.obtener_centro(dist)
@@ -184,10 +182,9 @@ def main():
             print("Grafo actualizado y rutas recalculadas.")
 
         elif opcion == '4':
-            print("Programa finalizado.")
             break
         else:
-            print("Opción inválida, intenta de nuevo.")
+            print("Opción inválida")
 
 if __name__ == '__main__':
     main()
